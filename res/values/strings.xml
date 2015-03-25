@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">掌上新闻</string>
+	<string name="loadmore_txt">正在加载，请稍候...</string>
+	<string name="loadmore_btn">加载更多</string>
+</resources>

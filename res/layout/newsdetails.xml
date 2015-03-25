@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_background" >
+
+    <RelativeLayout
+        android:id="@+id/newsdetails_titlebar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/titlebar_background"
+        android:gravity="center_vertical" >
+
+        <Button
+            android:id="@+id/newsdetails_titlebar_previous"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="2.0dip"
+            android:layout_marginBottom="6.0dip"
+            android:background="@drawable/newsdetails_title_previous_btn_selector"
+            android:textSize="14.0sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/newsdetails_titlebar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/newsdetails_titlebar_previous"
+            android:layout_toRightOf="@id/newsdetails_titlebar_previous"
+            android:text="国内"
+            android:textColor="@color/white"
+            android:textSize="18.0sp" />
+
+        <Button
+            android:id="@+id/newsdetails_titlebar_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/newsdetails_titlebar_previous"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="3.0dip"
+            android:background="@drawable/newsdetails_title_next_btn_selector" />
+
+        <Button
+            android:id="@+id/newsdetails_titlebar_comments"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:layout_toLeftOf="@id/newsdetails_titlebar_next"
+            android:background="@drawable/newsdetails_titlebar_comments_background"
+            android:text="0跟帖"
+            android:textColor="@color/white" />
+        <!-- android:layout_alignBaseline="@id/newsdetails_titlebar_title" -->
+
+        <ProgressBar
+            android:id="@+id/loadnews_progress"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="25.0dip"
+            android:layout_height="25.0dip"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30.0dip"
+            android:layout_marginTop="10.0dip"
+            android:clickable="false"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <ViewFlipper 
+        android:id="@+id/news_body_flipper"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="40dp"
+        android:layout_marginTop="-12dp"
+        android:layout_below="@id/newsdetails_titlebar_layout"
+        />
+    
+    <!-- 回复视图布局 -->
+    <include 
+        android:id="@+id/comments_reply_frame"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        layout="@layout/reply_frame"
+        />
+    
+</RelativeLayout>

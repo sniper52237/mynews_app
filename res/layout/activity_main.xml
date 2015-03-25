@@ -1,0 +1,82 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:orientation="vertical"
+    android:background="@drawable/main_background" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/titlebar_background">
+    	<TextView 
+    	    android:id="@+id/title"
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:text="@string/app_name"
+    	    android:textSize="18sp"
+    	    android:textColor="#ffffff"
+			android:layout_marginLeft="17dp"    	    
+			android:layout_marginTop="11dp"
+    	    />
+    	<Button 
+    	    android:id="@+id/refresh_btn"
+    	    android:layout_width="45dp"
+    	    android:layout_height="35dp"
+    	    android:background="@drawable/refresh_btn_bg" 
+    	    android:layout_marginTop="7dp"
+			android:layout_marginRight="5dp"
+			android:layout_alignParentRight="true"
+    	    />
+    	<ProgressBar 
+    	    android:id="@+id/loadnews_progress"
+    	    android:layout_width="25dp"
+    	    android:layout_height="25dp"
+    	    android:clickable="false"
+    	    android:visibility="gone"
+    	    android:layout_marginRight="15dp"
+    	    android:layout_marginTop="12dp"
+    	    android:layout_alignParentRight="true"
+    	    style="?android:attr/progressBarStyleLarge"
+    	    />
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/categorybar_background"
+        android:layout_marginTop="-18dp">
+    	<Button 
+    	    android:id="@+id/right_btn"
+    	    android:layout_width="13dp"
+    	    android:layout_height="15dp"
+    	    android:background="@drawable/categorybar_right_arrow"
+    	    android:layout_alignParentRight="true"
+    	    android:layout_marginTop="14dp"
+    	    android:layout_marginRight="10dp"
+    	    />
+        
+        <HorizontalScrollView 
+            android:id="@+id/category_scrollview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/right_btn"
+            android:layout_marginLeft="6dp"
+            android:scrollbars="none"
+            android:layout_centerVertical="true" >
+            <LinearLayout 
+                android:id="@+id/category_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+            </LinearLayout>
+        </HorizontalScrollView>
+    </RelativeLayout>
+    
+    <ListView 
+        android:id="@+id/newslist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/list_separator_line" />
+
+</LinearLayout>
